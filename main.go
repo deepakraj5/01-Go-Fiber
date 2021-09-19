@@ -14,7 +14,9 @@ func main() {
 
 		name := c.Params("name")
 
-		return c.SendString(name)
+		return c.Status(200).JSON(&fiber.Map{
+			"name": name,
+		})
 
 	})
 
